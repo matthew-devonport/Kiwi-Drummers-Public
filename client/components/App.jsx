@@ -1,9 +1,28 @@
-import React from 'react'
+import React from 'react';
+import NameForm from './NameForm';
+import BandForm from './BandForm';
+import FriendsForm from './FriendsForm';
+import DisplayData from './DisplayData'
 
-const App = () => {
-  return (
-    <h1>React development has begun!</h1>
-  )
+class App extends React.Component {
+  state = {userData: {
+    name: '',
+    genre: '',
+    friends: undefined,
+    number: 0
+  }}
+
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Fill out the form!</h1>
+        <NameForm />
+        <BandForm />
+        <FriendsForm />
+        <DisplayData {...this.state.userData}/>
+      </React.Fragment>
+    );
+  }
 }
 
-export default App
+export default App;
