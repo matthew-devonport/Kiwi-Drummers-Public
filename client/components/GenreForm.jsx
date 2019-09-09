@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BandForm extends React.Component {
+class GenreForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: 'Metal' };
@@ -21,7 +21,7 @@ class BandForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h2>Please select your favorite type of music:</h2>
+        <h2>Please select your genre of music:</h2>
         <label>
           <select value ={this.state.value} onChange={this.handleChange}>
             <option value='Metal'>Metal</option>
@@ -37,6 +37,6 @@ class BandForm extends React.Component {
   }
 }
 
-export default BandForm;
+export default GenreForm;
 
 

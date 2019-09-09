@@ -1,9 +1,9 @@
 import React from 'react';
 
-class NameForm extends React.Component {
+class BandsNameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 'Please state your name' };
+    this.state = { value: 'Please state the bands you currently drum for' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,15 +17,13 @@ class NameForm extends React.Component {
     event.preventDefault();
   }
 
-//   myCallback = (dataFromPage) => {
-      
-//   }
+  
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <h2>Your full name:</h2>
+          <h2>Names of the bands you currently drum for:</h2>
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type='submit' value='submit' />
@@ -34,4 +32,4 @@ class NameForm extends React.Component {
   }
 }
 
-export default NameForm;
+export default BandsNameForm;

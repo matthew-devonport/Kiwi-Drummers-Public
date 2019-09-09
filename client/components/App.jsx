@@ -1,15 +1,16 @@
 import React from 'react';
 import NameForm from './NameForm';
-import BandForm from './BandForm';
-import FriendsForm from './FriendsForm';
+import GenreForm from './GenreForm';
+import BandsForm from './BandsForm';
 import DisplayData from './DisplayData'
+import BandsNameForm from './BandsNameForm';
 
 class App extends React.Component {
   state = {userData: {
     name: '',
     genre: '',
     friends: undefined,
-    number: 0
+    number: undefined
   }}
 
   render() {
@@ -17,8 +18,9 @@ class App extends React.Component {
       <React.Fragment>
         <h1>Fill out the form!</h1>
         <NameForm />
-        <BandForm />
-        <FriendsForm />
+        <GenreForm />
+        <BandsForm />
+        <BandsNameForm />
         <DisplayData {...this.state.userData}/>
       </React.Fragment>
     );

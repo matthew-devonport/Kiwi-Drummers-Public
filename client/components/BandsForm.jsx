@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FriendsForm extends React.Component {
+class BandsForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +31,7 @@ class FriendsForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <h2>Do you friends like the same music?</h2>
+          <h2>Are you currently active in a band?</h2>
           Yes:
           <input
             name='Yes'
@@ -42,11 +42,11 @@ class FriendsForm extends React.Component {
         </label>
         <br />
         <label>
-          <h2>How many of your friends like the same music?</h2>
+          <h2>How many bands are you in?</h2>
           <input
-            name='numberOfFriends'
+            name='numberOfBands'
             type='number'
-            value={this.state.numberOfFriends}
+            value={this.state.numberOfBands}
             onChange={this.handleInputChange}
           />
         </label>
@@ -56,4 +56,4 @@ class FriendsForm extends React.Component {
   }
 }
 
-export default FriendsForm;
+export default BandsForm;
