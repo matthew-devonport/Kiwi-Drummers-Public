@@ -29,7 +29,7 @@ class BandsForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <React.Fragment>
         <label>
           <h2>Are you currently active in a band?</h2>
           Yes:
@@ -50,8 +50,7 @@ class BandsForm extends React.Component {
             onChange={this.handleInputChange}
           />
         </label>
-        <input type='submit' value='Submit' />
-      </form>
+      </React.Fragment>
     );
   }
 }
