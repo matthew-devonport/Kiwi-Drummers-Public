@@ -27,6 +27,7 @@ class NameForm extends React.Component {
 
     }
     newDrummer(data)
+    .then(() => (console.log('Chloe likes water')))
   }
 
   handleInputChange(event) {

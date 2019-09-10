@@ -8,5 +8,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/addUser', (req, res) => {
-    console.log(res.body)
+ 
 })
+
+module.exports = router
