@@ -1,6 +1,6 @@
 import React from 'react';
 import NameForm from './NameForm';
-import DisplayData from './DisplayData'
+
 
 
 class App extends React.Component {
@@ -16,7 +16,6 @@ class App extends React.Component {
       <React.Fragment>
         <h1>Fill out the form!</h1>
         <NameForm />
-        <DisplayData {...this.state.userData}/>
       </React.Fragment>
     );
   }
