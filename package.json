@@ -36,6 +36,7 @@
     "knex": "^0.19.3",
     "nodemon": "^1.19.2",
     "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "sqlite3": "^4.1.0",
     "superagent": "^5.0.2"
   },

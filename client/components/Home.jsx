@@ -14,18 +14,21 @@ class Home extends React.Component {
       let data = result.body;
       this.setState({
         drummers: data
-      })
-    })
+      });
+    });
   }
 
   render() {
-      
-      const {drummers} = this.state
+    const { drummers } = this.state;
     return (
       <React.Fragment>
         <div>
           <ul>
-            {drummers.map(drummer => <li>{drummer.fullname}</li>)}
+            {drummers.map((drummer, i) => (
+              <li key={i}>
+                <a href={`/#/artist/${drummer.id}`}>{drummer.fullname}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </React.Fragment>
