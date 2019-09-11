@@ -15,7 +15,6 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Thank you! ' + this.state.name);
     event.preventDefault();
     const data = {
       fullName: this.state.name,
@@ -25,6 +24,7 @@ class NameForm extends React.Component {
       bands: this.state.nameOfBands
     };
     newDrummer(data);
+    this.props.history.push('/')
   }
 
   handleInputChange(event) {
@@ -38,6 +38,7 @@ class NameForm extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <React.Fragment>
         <h1>Fill out the form!</h1>
