@@ -38,7 +38,6 @@ class NameForm extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <React.Fragment>
         <h1>Fill out the form!</h1>

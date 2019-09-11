@@ -16,7 +16,6 @@ class Artist extends React.Component {
       let drummer = data.find(item => {
         return id == item.id;
       });
-      console.log(drummer);
       this.setState({
         drummer: drummer
       });
@@ -33,7 +32,6 @@ class Artist extends React.Component {
 
   render() {
     const { drummer } = this.state;
-    console.log(drummer);
     return (
       <React.Fragment>
         <p>Fullname: {drummer.fullname}</p>
