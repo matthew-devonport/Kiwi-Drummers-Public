@@ -2,7 +2,7 @@ const env = process.env.NODE_ENV || 'development'
 const config = require('../knexfile')[env]
 const db = require('knex')(config)
 
-function getUser() {
+function getUsers() {
     return db('newData').select()
 }
 
@@ -12,8 +12,13 @@ function postUser(data) {
     })
 }
 
+function insertUser(data) {
+    return db('newData').insert({fullname: data.fullName}).where('id', 1)
+}
+
 
 module.exports = {
      postUser,
-     getUser
+     getUsers,
+     insertUser
 }

@@ -10,6 +10,6 @@ server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.urlencoded({ extended: true }));
 
 
-server.use('/', Routes);
+server.use('/api/v1', Routes);
 
 module.exports = server

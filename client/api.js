@@ -8,3 +8,7 @@ export function newDrummer(data) {
         console.log(e);
       });
 }
+
+export function getDrummerInfo() {
+  return request.get('/api/v1/users')
+}
