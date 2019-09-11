@@ -1,35 +1,36 @@
-import React from 'react'
-import { getDrummerInfo} from '../api'
+import React from 'react';
+import { getDrummerInfo } from '../api';
 
 class Home extends React.Component {
-    constructor(props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-        fullname: ''
-    }
+      drummers: []
+    };
+  }
 
-    }
-
-
-componentDidMount() {
-getDrummerInfo().then(result => {
-    const data = result.body                                       
-    console.log(data[0].fullname)
-    this.setState({                     
-        firstname: data.fullname
+  componentDidMount() {
+    getDrummerInfo().then(result => {
+      let data = result.body;
+      this.setState({
+        drummers: data
+      })
     })
-})
-}
+  }
 
-
-
-render () {
+  render() {
+      
+      const {drummers} = this.state
     return (
-        <p>hi</p>
-    )
-    
-    
-}
+      <React.Fragment>
+        <div>
+          <ul>
+            {drummers.map(drummer => <li>{drummer.fullname}</li>)}
+          </ul>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
-export default Home
+export default Home;
