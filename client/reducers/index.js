@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {artists} from './artists'
+import {drummers} from './drummers'
 
 export default combineReducers({
-artists,
+drummers,
 })

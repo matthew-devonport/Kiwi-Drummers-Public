@@ -1,6 +1,6 @@
 import { RECEIVE_DRUMMERS } from '../actions';
 
-export function artists(state = [], action) {
+export function drummers(state = [], action) {
   switch (action.type) {
     case RECEIVE_DRUMMERS:
       return action.drummers;
@@ -10,4 +10,4 @@ export function artists(state = [], action) {
   }
 }
 
-export default artists;
+export default drummers;

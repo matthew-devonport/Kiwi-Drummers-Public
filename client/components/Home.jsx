@@ -1,30 +1,19 @@
 import React from 'react';
-import { getDrummerInfo } from '../api';
 import {connect} from 'react-redux'
 import { fetchDrummers } from '../actions';
 
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drummers: []
-    };
-  }
+  
+
+
 
   componentDidMount() {
-    
-    fetchDrummers()
-    // getDrummerInfo().then(result => {
-    //   let data = result.body;
-    //   this.setState({
-    //     drummers: data
-    //   });
-    // });
+    this.props.dispatch(fetchDrummers())
   }
 
   render() {
-    const { drummers } = this.state;
+    const { drummers } = this.props;
     return (
       <React.Fragment>
         <div>
@@ -43,6 +32,7 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    drummers: state.drummers,
     errorMessage: state.errorMessage
   }
 }

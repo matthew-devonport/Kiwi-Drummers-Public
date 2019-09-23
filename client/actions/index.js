@@ -15,7 +15,7 @@ export const SHOW_ERROR = 'SHOW_ERROR'
 export const receiveDrummers = (drummers) => {
     return {
         type: RECEIVE_DRUMMERS,
-      drummers: drummers.map(drummer => drummer.data)
+        drummers: drummers
     }
 }
 
@@ -30,8 +30,8 @@ export function fetchDrummers () {
     return (dispatch) => {
         return request.get('/api/v1/users')
         .then(res => {
-            
             dispatch(receiveDrummers(res.body))
+           
         })
         .catch(err => {
             dispatch(showError(err.message))
