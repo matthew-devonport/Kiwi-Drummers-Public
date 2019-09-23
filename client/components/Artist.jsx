@@ -1,5 +1,6 @@
 import React from 'react';
 import { getDrummerInfo } from '../api';
+import {connect} from 'react-redux'
 
 class Artist extends React.Component {
   constructor(props) {
@@ -44,4 +45,10 @@ class Artist extends React.Component {
   }
 }
 
-export default Artist;
+function mapStateToProps(state) {
+  console.log(state)
+  return {}
+
+}
+
+export default connect(mapStateToProps)(Artist);

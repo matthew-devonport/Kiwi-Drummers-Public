@@ -1,5 +1,8 @@
 import React from 'react';
 import { getDrummerInfo } from '../api';
+import {connect} from 'react-redux'
+import { fetchDrummers } from '../actions';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -10,12 +13,14 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    getDrummerInfo().then(result => {
-      let data = result.body;
-      this.setState({
-        drummers: data
-      });
-    });
+    
+    fetchDrummers()
+    // getDrummerInfo().then(result => {
+    //   let data = result.body;
+    //   this.setState({
+    //     drummers: data
+    //   });
+    // });
   }
 
   render() {
@@ -36,4 +41,10 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    errorMessage: state.errorMessage
+  }
+}
+
+export default connect(mapStateToProps)(Home);
