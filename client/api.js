@@ -9,6 +9,6 @@ export function newDrummer(data) {
       });
 }
 
-export function getDrummerInfo() {
-  return request.get('/api/v1/users')
-}
+// export function getDrummerInfo() {
+//   return request.get('/api/v1/users')
+// }
