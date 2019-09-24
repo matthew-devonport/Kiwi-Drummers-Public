@@ -1,30 +1,15 @@
 import React from 'react';
-import { getDrummerInfo } from '../api';
-import {connect} from 'react-redux'
+import { fetchDrummers } from '../actions';
+import { connect } from 'react-redux';
 
 class Artist extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drummer: {}
-    };
-  }
 
   loadDrummer() {
-    getDrummerInfo().then(result => {
-      let data = result.body;
-      let { id } = this.props.match.params;
-      let drummer = data.find(item => {
-        return id == item.id;
-      });
-      this.setState({
-        drummer: drummer
-      });
-    });
+    this.props.dispatch(fetchDrummers());
   }
 
   componentDidMount() {
-      this.loadDrummer()
+    this.loadDrummer();
   }
 
   componentWillReceiveProps() {
@@ -32,8 +17,14 @@ class Artist extends React.Component {
   }
 
   render() {
-    const { drummer } = this.state;
+    const { drummers } = this.props;
+    let { id } = this.props.match.params;
+    let drummer = drummers.find(item => {
+      return id == item.id;
+    });
+
     return (
+      drummer ? (
       <React.Fragment>
         <p>Fullname: {drummer.fullname}</p>
         <p>Genre: {drummer.genre}</p>
@@ -41,14 +32,15 @@ class Artist extends React.Component {
         <p>How many active bands?: {drummer.number}</p>
         <p>Bands: {drummer.bands}</p>
       </React.Fragment>
+      ): <p></p>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state)
-  return {}
-
+  return {
+    drummers: state.drummers
+  };
 }
 
 export default connect(mapStateToProps)(Artist);

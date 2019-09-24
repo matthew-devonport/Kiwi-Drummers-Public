@@ -1,16 +1,7 @@
 import request from 'superagent'
 
-export const REQUEST_DRUMMERS = 'REQUEST_DRUMMERS'
 export const RECEIVE_DRUMMERS = 'RECEIVE_DRUMMERS'
 export const SHOW_ERROR = 'SHOW_ERROR'
-
-
-
-// export const requestDrummers = () => {
-//     return {
-//         type: REQUEST_DRUMMERS
-//     }
-// }
 
 export const receiveDrummers = (drummers) => {
     return {
