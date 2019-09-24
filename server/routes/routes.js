@@ -11,9 +11,14 @@ router.get('/users', (req, res) => {
 });
 
 router.post('/users', (req, res) => {
-  db.postUser(req.body).then(() => res.status(200));
+  db.postUser(req.body)
+    .then(() => {
+      res.status(201).send()
+    })
+    .catch(e => {
+      console.log(e)
+      res.status(500).send(e);
+    });
 });
-
-
 
 module.exports = router;

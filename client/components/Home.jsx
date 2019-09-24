@@ -5,9 +5,6 @@ import { fetchDrummers } from '../actions';
 
 class Home extends React.Component {
   
-
-
-
   componentDidMount() {
     this.props.dispatch(fetchDrummers())
   }
